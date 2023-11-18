@@ -1,20 +1,20 @@
 
 public class MyPoint {
-	//int Çü x, y º¯¼ö(private)
+	//int í˜• x, y ë³€ìˆ˜(private)
 	private int x,y;
-	// MyPoint »ı¼ºÀÚ - param(x, y)
+	// MyPoint ìƒì„±ì - param(x, y)
 	public MyPoint(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
 
-	// equals ÇÔ¼ö (return boolean) 
+	// equals í•¨ìˆ˜ (return boolean) 
 	public boolean equals(MyPoint q) {
 		if (x == q.x && y == q.y)
 			return true;
 		return false;
 	}
-	// toString ÇÔ¼ö (return String)
+	// toString í•¨ìˆ˜ (return String)
 	public String toString() {
 		return "Point(" + x + ", " + y + ")";
 	}
@@ -24,9 +24,9 @@ public class MyPoint {
 		MyPoint q = new MyPoint(4, 50);
 		System.out.println(p);
 		if (p.equals(q))
-			System.out.println("°°ÀºÁ¡");
+			System.out.println("ê°™ì€ì ");
 		else
-			System.out.println("´Ù¸¥Á¡");
+			System.out.println("ë‹¤ë¥¸ì ");
 	}
 
 }
