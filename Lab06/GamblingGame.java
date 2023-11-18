@@ -2,76 +2,76 @@ import java.util.Random;
 import java.util.Scanner;
 
 class Person {
-	// ÀÌ¸§ º¯¼ö String, private
+	// ì´ë¦„ ë³€ìˆ˜ String, private
 	private String name;
-	// Person »ı¼ºÀÚ - param (ÀÌ¸§)
+	// Person ìƒì„±ì - param (ì´ë¦„)
 	public Person(String name) {
 		this.name = name;
 	}
-	// getName ÇÔ¼ö - return String;
+	// getName í•¨ìˆ˜ - return String;
 	public String getName() {
 		return name;
 	}
 }
 
 public class GamblingGame {
-	// Scanner °´Ã¼ ¼±¾ğ
+	// Scanner ê°ì²´ ì„ ì–¸
 	Scanner scan = new Scanner(System.in, "EUC-KR");
-	// Person ¹è¿­ »ı¼º - Å©±â 2
+	// Person ë°°ì—´ ìƒì„± - í¬ê¸° 2
 	Person[] person = new Person[2];
-	// ·£´ı °´Ã¼ ¼±¾ğ
+	// ëœë¤ ê°ì²´ ì„ ì–¸
 	int num = (int)(Math.random()*3 + 1);
 	
 
 	public void setting() {
-		// "1¹øÂ° ¼±¼ö ÀÌ¸§ >> " Ãâ·Â
-		System.out.print("1¹øÂ° ¼±¼ö ÀÌ¸§ >>");
-		// ÀÌ¸§ ÀÔ·Â
+		// "1ë²ˆì§¸ ì„ ìˆ˜ ì´ë¦„ >> " ì¶œë ¥
+		System.out.print("1ë²ˆì§¸ ì„ ìˆ˜ ì´ë¦„ >>");
+		// ì´ë¦„ ì…ë ¥
 		String name1 = scan.next();
-		// »ı¼ºÀÚ ÀÌ¿ëÇØ¼­ Ã¹¹øÂ° ¼±¼ö ÀÌ¸§ ¼¼ÆÃ
+		// ìƒì„±ì ì´ìš©í•´ì„œ ì²«ë²ˆì§¸ ì„ ìˆ˜ ì´ë¦„ ì„¸íŒ…
 		person[0] = new Person(name1);
-		// "2¹øÂ° ¼±¼ö ÀÌ¸§ >> " Ãâ·Â
-		System.out.print("2¹øÂ° ¼±¼ö ÀÌ¸§ >>");
-		// ÀÌ¸§ ÀÔ·Â
+		// "2ë²ˆì§¸ ì„ ìˆ˜ ì´ë¦„ >> " ì¶œë ¥
+		System.out.print("2ë²ˆì§¸ ì„ ìˆ˜ ì´ë¦„ >>");
+		// ì´ë¦„ ì…ë ¥
 		String name2 = scan.next();
-		// »ı¼ºÀÚ ÀÌ¿ëÇØ¼­ µÎ¹øÂ° ¼±¼ö ÀÌ¸§ ¼¼ÆÃ
+		// ìƒì„±ì ì´ìš©í•´ì„œ ë‘ë²ˆì§¸ ì„ ìˆ˜ ì´ë¦„ ì„¸íŒ…
 		person[1] = new Person(name2);
 		String key = scan.nextLine();
 	}
 
 	public void run() {
 		setting();
-		// ½Â¸®¸¦ ÀÇ¹ÌÇÏ´Â boolean º¯¼ö ¼±¾ğ
-		boolean victory = false; //ÃÊ±âÈ­
+		// ìŠ¹ë¦¬ë¥¼ ì˜ë¯¸í•˜ëŠ” boolean ë³€ìˆ˜ ì„ ì–¸
+		boolean victory = false; //ì´ˆê¸°í™”
 		while (true) {
-			// for 0 to person ±æÀÌ¸¸Å­{
+			// for 0 to person ê¸¸ì´ë§Œí¼{
 			for (int i=0; i<person.length; i++) {
-				// ÀÌ¸§ + ¿£ÅÍ Ãâ·Â
+				// ì´ë¦„ + ì—”í„° ì¶œë ¥
 				System.out.print("[" + person[i].getName() + "]:<Enter>");
-				// Å° ÀÔ·Â¹Ş±â nextLine
+				// í‚¤ ì…ë ¥ë°›ê¸° nextLine
 				String key = scan.nextLine();
-				// ¼¼°³ÀÇ ·£´ı º¯¼ö »ı¼º
+				// ì„¸ê°œì˜ ëœë¤ ë³€ìˆ˜ ìƒì„±
 				int a = (int)(Math.random()*3 + 1);
 				int b = (int)(Math.random()*3 + 1);
 				int c = (int)(Math.random()*3 + 1);
 			
-				// ·£´ı º¯¼ö Ãâ·Â
+				// ëœë¤ ë³€ìˆ˜ ì¶œë ¥
 				System.out.print("\t" + a + " " + b + " " + c + " ");
-				// ¼¼ ¼ö°¡ ¸ğµÎ µ¿ÀÏÇÏ´Ù¸é
+				// ì„¸ ìˆ˜ê°€ ëª¨ë‘ ë™ì¼í•˜ë‹¤ë©´
 				if (a == b && b == c) {
-					// ½Â¸® Ãâ·Â & Ç¥½Ã for ºüÁ®³ª°¡±â.
-					System.out.print(person[i].getName() + "ÀÌ(°¡) ÀÌ°å½À´Ï´Ù.");
+					// ìŠ¹ë¦¬ ì¶œë ¥ & í‘œì‹œ for ë¹ ì ¸ë‚˜ê°€ê¸°.
+					System.out.print(person[i].getName() + "ì´(ê°€) ì´ê²¼ìŠµë‹ˆë‹¤.");
 					victory = true;
 					break;
 				}
-				// ¾Æ´Ï¶ó¸é
+				// ì•„ë‹ˆë¼ë©´
 				else
-					//¾Æ½±±º¿ä! Ãâ·Â
-					System.out.println("¾Æ½±±º¿ä!");
+					//ì•„ì‰½êµ°ìš”! ì¶œë ¥
+					System.out.println("ì•„ì‰½êµ°ìš”!");
 			}
-			// if - for ¿¡¼­ ½Â¸®ÇÑ °æ¿ì
+			// if - for ì—ì„œ ìŠ¹ë¦¬í•œ ê²½ìš°
 			if (victory == true) {
-				// ½ºÄ³³Ê ´İ°í while ³ª°¡±â
+				// ìŠ¤ìºë„ˆ ë‹«ê³  while ë‚˜ê°€ê¸°
 				scan.close();
 				break;
 			}
@@ -80,7 +80,7 @@ public class GamblingGame {
 	public static void main(String[] args) {
 		GamblingGame gg = new GamblingGame();
 		gg.run();
-		System.out.print("\n2210701 ±èÁÖ¿µ");
+		System.out.print("\n2210701 ê¹€ì£¼ì˜");
 	}
 
 }
